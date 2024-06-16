@@ -107,12 +107,15 @@ def download(link, yt_title, args) -> str:
     The song will be saved with the passed title.
     Return the saved path of the song.
     """
-    logger.info('Downloading {}{}{} in {}{}kbps{}'.format(
+    logger.info('Downloading {}{}{} in {}{}kbps{} from {}{}{}'.format(
         Fore.LIGHTMAGENTA_EX,
         yt_title,
         Style.RESET_ALL,
         Fore.LIGHTYELLOW_EX,
         defaults.DEFAULT.SONG_QUALITY,
+        Style.RESET_ALL,
+        Fore.LIGHTMAGENTA_EX,
+        link,
         Style.RESET_ALL
     ))
     path = yt.dw(link, args.proxy, yt_title,
